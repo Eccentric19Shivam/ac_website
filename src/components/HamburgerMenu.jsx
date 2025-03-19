@@ -1,18 +1,5 @@
-import React from 'react'
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { HiMenu, HiX } from 'react-icons/hi';
-import { AiOutlineHome, AiOutlineShop } from 'react-icons/ai';
-import { MdMiscellaneousServices } from 'react-icons/md';
-
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const menuItems = [
-    { path: '/', name: 'Home', icon: <AiOutlineHome className="w-6 h-6" /> },
-    { path: '/services', name: 'Services', icon: <MdMiscellaneousServices className="w-6 h-6" /> },
-    { path: '/products', name: 'Products', icon: <AiOutlineShop className="w-6 h-6" /> },
-  ];
 
   return (
     <div className="lg:hidden fixed top-4 right-4 z-50">
@@ -28,17 +15,17 @@ const HamburgerMenu = () => {
       </button>
 
       <div 
-        className={`fixed top-0 right-0 h-screen w-full bg-white/40 backdrop-blur-lg transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-screen w-full sm:w-[320px] bg-white/90 backdrop-blur-md transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } shadow-2xl`}
       >
-        <nav className="flex flex-col items-center justify-center h-full space-y-8">
+        <nav className="flex flex-col items-center justify-center h-full space-y-8 p-4">
           {menuItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setIsOpen(false)}
-              className="flex items-center space-x-2 text-xl font-medium text-gray-800 hover:text-gray-600 transition-colors duration-300 group bg-white/30 backdrop-blur-sm p-3 rounded-lg hover:bg-white/40"
+              className="flex items-center space-x-2 text-base sm:text-lg font-medium text-gray-800 hover:text-gray-600 transition-colors duration-300 group"
             >
               <span className="group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
@@ -51,5 +38,3 @@ const HamburgerMenu = () => {
     </div>
   );
 };
-
-export default HamburgerMenu;

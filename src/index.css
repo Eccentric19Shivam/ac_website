@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply antialiased;
+}
+
+body {
+  @apply text-base leading-relaxed;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}

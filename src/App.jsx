@@ -12,16 +12,18 @@ import HamburgerMenu from './components/HamburgerMenu';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navbar />
-        <HamburgerMenu/>
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/products" element={<Products />} />
-        </Routes>
-        <CallButton/>
-        <WhatsAppButton />
+        <HamburgerMenu />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/products" element={<Products />} />
+          </Routes>
+        </main>
+        <CallButton className="lg:hidden" />
+        <WhatsAppButton className="lg:hidden" />
         <Footer />
       </div>
     </Router>
