@@ -8,9 +8,16 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-blue-600">
-              CoolAir Solutions
-            </Link>
+            <Link to="/" className="flex items-center space-x-2">
+                <img 
+                  src="/logo.png" 
+                  alt="CoolAir Solutions Logo" 
+                  className="h-24 w-24 object-contain"
+                />
+                <span className="text-2xl font-bold text-blue-600">
+                  Advance Plus Electronics & Services
+                </span>
+              </Link>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
