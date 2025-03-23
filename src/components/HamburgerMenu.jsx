@@ -23,6 +23,11 @@ const HamburgerMenu = () => {
       name: 'Products',
       path: '/products',
       icon: <BsFillTelephoneFill className="w-5 h-5" />
+    },
+    {
+      name: 'Store',
+      path: '/store',
+      icon: <BsFillTelephoneFill className="w-5 h-5" />
     }
   ];
 

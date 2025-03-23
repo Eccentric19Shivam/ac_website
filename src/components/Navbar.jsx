@@ -22,7 +22,7 @@ function Navbar() {
                 className="h-16 w-16 object-contain rounded-lg p-1 shadow-sm"
               />
               <div className="flex flex-col space-y-1">
-                <span className="text-3xl sm:text-xl lg:text-2xl font-extrabold bg-gradient-to-r from-white to-white bg-clip-text text-transparent tracking-wider uppercase hidden sm:block hover:scale-105 transition-transform duration-300">
+                <span className="text-lg sm:text-xl lg:text-2xl font-extrabold bg-gradient-to-r from-white to-white bg-clip-text text-transparent tracking-wider uppercase hidden sm:block hover:scale-105 transition-transform duration-300">
                   Advance Plus Electronics & Services
                 </span>
                 <span className="text-sm sm:text-base lg:text-lg font-medium text-white tracking-wide hidden sm:block">
