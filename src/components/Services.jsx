@@ -73,14 +73,14 @@ function Services() {
           className="flex justify-center mb-16"
         >
           <a
-            href="tel:+919876543210"
+            href="tel:+919828158686"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 
               bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 
               transition-all duration-300 transform hover:scale-105 shadow-lg 
               hover:shadow-red-500/50 text-center group"
           >
             <FaPhone className="group-hover:animate-pulse" />
-            <span>Call for Service Quote</span>
+            <span>Call +91 9828158686</span>
           </a>
         </motion.div>
 

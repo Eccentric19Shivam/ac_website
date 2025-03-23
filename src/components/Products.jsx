@@ -80,14 +80,14 @@ function Products() {
           className="flex justify-center mb-16"
         >
           <a
-            href="tel:+919876543210"
+            href="tel:+919828158686"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 
               bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 
               transition-all duration-300 transform hover:scale-105 shadow-lg 
               hover:shadow-red-500/50 text-center group"
           >
             <FaPhone className="group-hover:animate-pulse" />
-            <span>Call for Price Quote</span>
+            <span>Call +91 9828158686</span>
           </a>
         </motion.div>
 
@@ -121,7 +121,7 @@ function Products() {
                   {product.description}
                 </p>
                 <a 
-                  href="https://wa.me/+919876543210?text=I'm%20interested%20in%20your%20AC%20products"
+                  href="https://wa.me/+919649203996?text=I'm%20interested%20in%20your%20AC%20products"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-4 text-white opacity-0 transform 

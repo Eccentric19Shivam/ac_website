@@ -22,7 +22,7 @@ function Footer() {
               <li><Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200">Home</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-200">Services</Link></li>
               <li><Link to="/products" className="text-gray-400 hover:text-white transition-colors duration-200">Products</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">Contact</Link></li>
+              <li><Link to="/store" className="text-gray-400 hover:text-white transition-colors duration-200">Our Store</Link></li>
             </ul>
           </div>
 
@@ -37,7 +37,7 @@ function Footer() {
               
               <div className="flex flex-col sm:flex-row items-center sm:items-center space-y-2 sm:space-y-0">
                 <FaPhone className="w-6 h-6 mb-2 sm:mb-0 sm:mr-2" />
-                <a href="tel:+1234567890" className="hover:text-white transition-colors duration-200">123-456-7890</a>
+                <a href="tel:+1234567890" className="hover:text-white transition-colors duration-200">+91 9828158686</a>
               </div>
               
               <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0">

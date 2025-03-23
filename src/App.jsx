@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import CallButton from './components/CallButton';
 import HamburgerMenu from './components/HamburgerMenu';
+import Store from './components/Store';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Hero />} />
             <Route path="/services" element={<Services />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/store" element={<Store />} />
           </Routes>
         </main>
         <CallButton className="lg:hidden" />
