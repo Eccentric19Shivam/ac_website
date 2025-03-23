@@ -7,20 +7,44 @@ function Hero() {
   const words = ["Experience", "Perfect"];
   const subText = "Climate Control";
 
+  const brands = [
+    {
+      name: "Carrier",
+      logo: "/brands/carrier-logo.webp"
+    },
+    {
+      name: "Midea",
+      logo: "/brands/midea-logo.webp"
+    },
+    {
+      name: "Toshiba",
+      logo: "/brands/toshiba-logo.webp"
+    },
+    {
+      name: "Daikin",
+      logo: "/brands/daikin-logo.webp"
+    },
+    {
+      name: "General",
+      logo: "/brands/general-logo.webp"
+    }
+  ];
+
   return (
     <>
+      {/* Hero Section */}
       <div className="relative min-h-[calc(100vh-4rem)] flex items-center">
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1585128903994-0b5a5a2f3e2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1614633833026-0820452b4170?auto=format&fit=crop&w=2070&q=80')`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
           }}
         />
         
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-transparent" />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl text-left space-y-6 sm:space-y-8">
@@ -88,14 +112,7 @@ function Hero() {
               >
                 Explore Services
               </Link>
-              <Link 
-                to="/contact"
-                className="px-8 py-4 bg-white/10 text-white rounded-lg font-medium 
-                  backdrop-blur-sm hover:bg-white/20 transition-all duration-300 
-                  transform hover:scale-105 text-center"
-              >
-                Contact Us
-              </Link>
+              
               <a 
                 href="tel:+919876543210"
                 className="flex items-center justify-center gap-2 px-8 py-4 
@@ -132,6 +149,43 @@ function Hero() {
         </div>
       </div>
 
+      {/* Brand Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl font-bold text-gray-900 text-center mb-16"
+          >
+            Our Trusted <span className="text-blue-600">Brands</span>
+          </motion.h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-items-center">
+            {brands.map((brand, index) => (
+              <motion.div
+                key={brand.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative w-full max-w-[300px] aspect-[3/2] bg-white rounded-xl 
+                  p-10 hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              >
+                <img
+                  src={brand.logo}
+                  alt={`${brand.name} logo`}
+                  className="w-full h-full object-contain filter grayscale hover:grayscale-0 
+                    transition-all duration-300 hover:scale-110"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
       <section className="bg-gray-900 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white text-center mb-16">
