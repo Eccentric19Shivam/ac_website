@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaTools, FaSnowflake, FaCog, FaWrench, FaFan, FaWater } from 'react-icons/fa';
+import { FaTools, FaSnowflake, FaWrench, FaFan, FaPhone, FaArrowRight } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 function Services() {
   const services = [
@@ -47,33 +48,67 @@ function Services() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-blue-50 py-16">
+    <section className="bg-gradient-to-b from-gray-50 to-blue-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold text-gray-900 mb-4">
-            Professional AC Services
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+            Professional <span className="text-blue-600">AC Services</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Expert solutions for all your AC needs with guaranteed satisfaction 💫
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+            Expert solutions for all your AC needs with guaranteed satisfaction
           </p>
-        </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex justify-center mb-16"
+        >
+          <a
+            href="tel:+919876543210"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 
+              bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 
+              transition-all duration-300 transform hover:scale-105 shadow-lg 
+              hover:shadow-red-500/50 text-center group"
+          >
+            <FaPhone className="group-hover:animate-pulse" />
+            <span>Call for Service Quote</span>
+          </a>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl 
+                transition-all duration-300 bg-white"
             >
               <div 
-                className="absolute inset-0 bg-cover bg-center z-0 transform transition-transform duration-500 group-hover:scale-110"
+                className="absolute inset-0 bg-cover bg-center z-0 transform 
+                  transition-transform duration-500 group-hover:scale-110"
                 style={{
                   backgroundImage: `url(${service.image})`,
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/80 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 z-10 
+                transition-opacity duration-300 group-hover:opacity-75" />
+              
               <div className="relative z-20 p-8">
                 <div className="flex items-center mb-6">
-                  <div className="p-3 bg-white/10 backdrop-blur-sm rounded-lg">
+                  <div className="p-3 bg-white/10 backdrop-blur-sm rounded-lg 
+                    group-hover:bg-blue-500/20 transition-all duration-300">
                     {service.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-white ml-4">
@@ -88,15 +123,20 @@ function Services() {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-6 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300">
-                  Learn More
+                <button 
+                  className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg 
+                    hover:bg-blue-600 transition-all duration-300 transform 
+                    hover:scale-105 flex items-center gap-2 group/btn"
+                >
+                  <span>Learn More</span>
+                  <FaArrowRight className="group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

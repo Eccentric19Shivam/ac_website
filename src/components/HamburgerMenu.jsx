@@ -1,5 +1,30 @@
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+import { HiMenu, HiX } from 'react-icons/hi';
+import { AiFillHome } from 'react-icons/ai';
+import { MdMiscellaneousServices } from 'react-icons/md';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const menuItems = [
+    {
+      name: 'Home',
+      path: '/',
+      icon: <AiFillHome className="w-5 h-5" />
+    },
+    {
+      name: 'Services',
+      path: '/services',
+      icon: <MdMiscellaneousServices className="w-5 h-5" />
+    },
+    {
+      name: 'Products',
+      path: '/products',
+      icon: <BsFillTelephoneFill className="w-5 h-5" />
+    }
+  ];
 
   return (
     <div className="lg:hidden fixed top-4 right-4 z-50">
@@ -38,3 +63,5 @@ const HamburgerMenu = () => {
     </div>
   );
 };
+
+export default HamburgerMenu;
