@@ -7,49 +7,49 @@ const products = [
     id: 1,
     name: 'Window AC',
     description: 'Perfect for single rooms and small spaces',
-    image: '/ac/window.webp'
+    image: '/ac/window.png'
   },
   {
     id: 2,
     name: 'Split AC',
     description: 'Energy-efficient cooling for modern homes',
-    image: '/ac/split.jpg'
+    image: '/ac/split.png'
   },
   {
     id: 3,
     name: 'Portable AC',
     description: 'Flexible cooling solution you can move anywhere',
-    image: 'ac/portable.webp'
+    image: 'ac/portable.png'
   },
   {
     id: 4,
     name: 'Tower AC',
     description: 'Sleek design with powerful vertical airflow',
-    image: 'ac/tower.webp'
+    image: 'ac/tower.png'
   },
   {
     id: 5,
     name: 'Cassette AC',
     description: 'Perfect for commercial spaces with even cooling',
-    image: 'ac/cassette.webp'
+    image: 'ac/cassette.png'
   },
   {
     id: 6,
     name: 'Ductable AC',
     description: 'Ideal for large spaces and office environments',
-    image: 'ac/ductable.webp'
+    image: 'ac/ductable.png'
   },
   {
     id: 7,
     name: 'VRF AC System',
     description: 'Advanced climate control for multi-zone applications',
-    image: 'ac/vrf.jpg'
+    image: 'ac/vrf.png'
   },
   {
     id: 8,
     name: 'Hot & Cold AC',
     description: 'Year-round comfort with heating and cooling',
-    image: 'ac/hot_cold.webp'
+    image: 'ac/hot_cold.png'
   }
 ];
 

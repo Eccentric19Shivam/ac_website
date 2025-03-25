@@ -10,23 +10,27 @@ function Hero() {
   const brands = [
     {
       name: "Carrier",
-      logo: "/brands/carrier-logo.webp"
+      logo: "/brands/carrier_logo.png"
     },
     {
       name: "Midea",
-      logo: "/brands/midea-logo.webp"
+      logo: "/brands/midea_logo.png"
     },
     {
       name: "Toshiba",
-      logo: "/brands/toshiba-logo.webp"
+      logo: "/brands/toshiba_logo.png"
     },
     {
       name: "Daikin",
-      logo: "/brands/daikin-logo.webp"
+      logo: "/brands/daikin_logo.png"
     },
     {
       name: "General",
-      logo: "/brands/general-logo.webp"
+      logo: "/brands/general_logo.png"
+    },
+    {
+      name: "Voltas",
+      logo: "/brands/voltas_logo.png"
     }
   ];
 

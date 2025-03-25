@@ -1,142 +1,212 @@
 import React from 'react';
-import { FaTools, FaSnowflake, FaWrench, FaFan, FaPhone, FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { 
+  Wrench, 
+  Wind, 
+  Sparkles,
+  Box, 
+  Cable, 
+  TestTube,
+  Hammer, 
+  Phone,
+  Droplets,
+  MessageCircle
+} from 'lucide-react';
 
 function Services() {
   const services = [
     {
-      title: "Super Saver Packages",
-      icon: <FaSnowflake className="w-8 h-8 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&q=80",
-      features: [
-        "Deep indoor cleaning for multiple ACs (2 to 5 units)",
-        "Foam-Jet Service with Free Gas Checkup",
-        "Suitable for both window & split ACs"
+      category: "Installation & Uninstallation",
+      icon: <Wrench className="w-6 h-6" />,
+      description: "Professional AC installation and removal services",
+      items: [
+        { name: "Split AC Installation", price: "₹1,199" },
+        { name: "Split AC Uninstallation", price: "₹600" },
+        { name: "Cassette AC Installation", price: "₹3,000" },
+        { name: "Cassette AC Uninstallation", price: "₹1,500" }
       ]
     },
     {
-      title: "AC Servicing",
-      icon: <FaTools className="w-8 h-8 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1581093458791-4a2b7b785a23?auto=format&fit=crop&q=80",
-      features: [
-        "Foam-Jet AC Service – Intensive cleaning with foam & jet spray",
-        "Lite AC Service – Indoor unit cleaning with water jet spray"
+      category: "Gas Services",
+      icon: <Wind className="w-6 h-6" />,
+      description: "Expert AC gas charging and maintenance",
+      items: [
+        { name: "Gas Top-up", price: "₹1,900" },
+        { name: "Gas Charging", price: "₹3,000" }
       ]
     },
     {
-      title: "Repair & Gas Refill",
-      icon: <FaWrench className="w-8 h-8 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80",
-      features: [
-        "AC Cooling Issue Repair",
-        "AC Gas Leak Repair & Refill",
-        "AC Water Leakage Repair",
-        "AC Noise/Smell Repair"
+      category: "AC Cleaning & Maintenance",
+      icon: <Sparkles className="w-6 h-6" />,
+      description: "Comprehensive cleaning solutions for your AC",
+      items: [
+        { name: "Foam Jet Cleaning (1 AC)", price: "₹700" },
+        { name: "Foam Jet Cleaning (2 ACs)", price: "₹1,400" },
+        { name: "Foam Jet Cleaning (3 ACs)", price: "₹2,100" },
+        { name: "Foam Jet Cleaning (4 ACs)", price: "₹2,800" },
+        { name: "Foam Jet Cleaning (5 ACs)", price: "₹3,500" },
+        { name: "Jet Spray Cleaning", price: "₹650" },
+        { name: "Normal Cleaning", price: "₹500" }
       ]
     },
     {
-      title: "Installation & Uninstallation",
-      icon: <FaFan className="w-8 h-8 text-blue-500" />,
-      image: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?auto=format&fit=crop&q=80",
-      features: [
-        "Split AC Installation & Uninstallation",
-        "Window AC Installation & Uninstallation",
-        "Professional mounting and setup",
-        "Safe and secure removal services"
+      category: "Cassette AC Services",
+      icon: <Box className="w-6 h-6" />,
+      description: "Specialized services for cassette air conditioners",
+      items: [
+        { name: "Cassette AC Service", price: "₹1,500" }
+      ]
+    },
+    {
+      category: "AC Stands",
+      icon: <Hammer className="w-6 h-6" />,
+      description: "Quality mounting solutions for your AC",
+      items: [
+        { name: "Split AC Stand", price: "₹699" },
+        { name: "Cassette AC Stand", price: "₹1,499" }
+      ]
+    },
+    {
+      category: "Drain Pipe",
+      icon: <Droplets className="w-6 h-6" />,
+      description: "Professional drain pipe installation",
+      items: [
+        { name: "Drain Pipe (per meter)", price: "₹90" }
+      ]
+    },
+    {
+      category: "Power Cable",
+      icon: <Cable className="w-6 h-6" />,
+      description: "High-quality power cable solutions",
+      items: [
+        { name: "4 Core 3 Sqm (per meter)", price: "₹165" },
+        { name: "4 Core 2.5 Sqm (per meter)", price: "₹155" },
+        { name: "3 Core 2.5 Sqm (per meter)", price: "₹140" },
+        { name: "2 Core 2.5 Sqm (per meter)", price: "₹105" }
+      ]
+    },
+    {
+      category: "Nitrogen Testing",
+      icon: <TestTube className="w-6 h-6" />,
+      description: "Professional nitrogen testing services",
+      items: [
+        { name: "N2 Testing for Split AC", price: "₹699" },
+        { name: "N2 Testing for Cassette AC", price: "₹1,499" }
       ]
     }
   ];
 
+  const getWhatsAppLink = (service) => {
+    const message = encodeURIComponent(`Hi, I'm interested in your ${service} services. Can you provide more information?`);
+    return `https://wa.me/919649203996?text=${message}`;
+  };
+
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-blue-50 py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
-            Professional <span className="text-blue-600">AC Services</span>
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            Expert solutions for all your AC needs with guaranteed satisfaction
-          </p>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center mb-16"
-        >
-          <a
-            href="tel:+919828158686"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 
-              bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 
-              transition-all duration-300 transform hover:scale-105 shadow-lg 
-              hover:shadow-red-500/50 text-center group"
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      {/* Title Section */}
+      <div className="bg-white shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center space-y-4"
           >
-            <FaPhone className="group-hover:animate-pulse" />
-            <span>Call +91 9828158686</span>
-          </a>
-        </motion.div>
+            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900">
+              Our <span className="text-blue-600">Services</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Expert AC solutions for your comfort needs
+            </p>
+          </motion.div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <p className="text-lg text-gray-600">Professional AC solutions at competitive prices</p>
+        </div> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl 
-                transition-all duration-300 bg-white"
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
             >
-              <div 
-                className="absolute inset-0 bg-cover bg-center z-0 transform 
-                  transition-transform duration-500 group-hover:scale-110"
-                style={{
-                  backgroundImage: `url(${service.image})`,
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 z-10 
-                transition-opacity duration-300 group-hover:opacity-75" />
-              
-              <div className="relative z-20 p-8">
-                <div className="flex items-center mb-6">
-                  <div className="p-3 bg-white/10 backdrop-blur-sm rounded-lg 
-                    group-hover:bg-blue-500/20 transition-all duration-300">
+              <div className="p-6 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-blue-100 rounded-lg text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white ml-4">
-                    {service.title}
-                  </h3>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      {service.category}
+                    </h3>
+                    <p className="text-sm text-gray-500">{service.description}</p>
+                  </div>
                 </div>
-                <ul className="space-y-3">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="text-gray-200 flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
-                      {feature}
-                    </li>
+                
+                <div className="space-y-3">
+                  {service.items.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+                    >
+                      <span className="text-gray-700">{item.name}</span>
+                      <span className="font-semibold text-blue-600">
+                        {item.price}
+                      </span>
+                    </div>
                   ))}
-                </ul>
-                <button 
-                  className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg 
-                    hover:bg-blue-600 transition-all duration-300 transform 
-                    hover:scale-105 flex items-center gap-2 group/btn"
+                </div>
+
+                <a
+                  href={getWhatsAppLink(service.category)}
+                  className="mt-4 w-full flex items-center justify-center gap-2 bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300"
                 >
-                  <span>Learn More</span>
-                  <FaArrowRight className="group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </button>
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Enquire on WhatsApp</span>
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <div className="inline-block bg-gray-50 px-6 py-3 rounded-full text-gray-600">
+            <p>* All prices are exclusive of 18% GST unless specified otherwise</p>
+          </div>
+        </motion.div>
       </div>
-    </section>
+
+      <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+        <motion.a
+          href="tel:+919649203996"
+          className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 hover:scale-110"
+          aria-label="Call us"
+          whileHover={{ scale: 1.1 }}
+        >
+          <Phone className="w-6 h-6" />
+        </motion.a>
+        <motion.a
+          href={getWhatsAppLink("AC")}
+          className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-colors duration-300 hover:scale-110"
+          aria-label="Chat on WhatsApp"
+          whileHover={{ scale: 1.1 }}
+        >
+          <MessageCircle className="w-6 h-6" />
+        </motion.a>
+      </div>
+    </div>
   );
 }
 
