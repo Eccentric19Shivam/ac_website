@@ -4,40 +4,23 @@ import { motion } from "framer-motion";
 import { FaMoneyBillWave, FaTruck, FaCreditCard, FaTools, FaUserClock, FaAward, FaPhone } from 'react-icons/fa';
 
 function Hero() {
-  const words = ["Advance Plus Electronics ", "& Services"];
+  const words = ["Advance Plus Electronics", "& Services"];
   const subText = "Best AC Solutions in Jaipur!";
 
   const brands = [
-    {
-      name: "Carrier",
-      logo: "/brands/carrier_logo.png"
-    },
-    {
-      name: "Midea",
-      logo: "/brands/midea_logo.png"
-    },
-    {
-      name: "Toshiba",
-      logo: "/brands/toshiba_logo.png"
-    },
-    {
-      name: "Daikin",
-      logo: "/brands/daikin_logo.png"
-    },
-    {
-      name: "General",
-      logo: "/brands/general_logo.png"
-    },
-    {
-      name: "Voltas",
-      logo: "/brands/voltas_logo.png"
-    }
+    { name: "Carrier", logo: "/brands/carrier_logo.png" },
+    { name: "Midea", logo: "/brands/midea_logo.png" },
+    { name: "Toshiba", logo: "/brands/toshiba_logo.png" },
+    { name: "Daikin", logo: "/brands/daikin_logo.png" },
+    { name: "General", logo: "/brands/general_logo.png" },
+    { name: "Voltas", logo: "/brands/voltas_logo.png" }
   ];
 
   return (
     <>
       {/* Hero Section */}
       <div className="relative min-h-[calc(100vh-4rem)] flex items-center">
+        {/* Background Image */}
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -48,10 +31,13 @@ function Hero() {
           }}
         />
 
+        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-transparent" />
 
+        {/* Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl text-left space-y-6 sm:space-y-8">
+          <div className="max-w-3xl text-left space-y-8 sm:space-y-10">
+            {/* Title */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-600 leading-tight">
               <div className="overflow-hidden">
                 {words.map((word, i) => (
@@ -78,12 +64,13 @@ function Hero() {
                   delay: 0.6,
                   ease: "easeOut"
                 }}
-                className="block text-white mt-2"
+                className="block text-white mt-4" // Adjusted spacing
               >
                 {subText}
               </motion.span>
             </h1>
 
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -98,6 +85,7 @@ function Hero() {
               delivering comfort and style in every season.
             </motion.p>
 
+            {/* Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -129,6 +117,7 @@ function Hero() {
               </a>
             </motion.div>
 
+            {/* Tags */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -200,89 +189,6 @@ function Hero() {
                   className="w-full h-full object-contain filter grayscale hover:grayscale-0 
                     transition-all duration-300 hover:scale-110"
                 />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="bg-white py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-16">
-            Why Choose <span className="text-blue-600">Us?</span>
-          </h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center mb-16"
-          >
-            <a
-              href="tel:+919828158686"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 
-                        bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 
-                        transition-all duration-300 transform hover:scale-105 shadow-lg 
-                        hover:shadow-red-500/50 text-center group"
-            >
-              <FaPhone className="group-hover:animate-pulse" />
-              <span>Call +91 9828158686</span>
-            </a>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {[
-              {
-                icon: <FaMoneyBillWave className="w-10 h-10" />,
-                title: "Best Prices",
-                description: "Competitive pricing with maximum value for your investment"
-              },
-              {
-                icon: <FaTruck className="w-10 h-10" />,
-                title: "Express Service",
-                description: "Quick response and same-day service availability"
-              },
-              {
-                icon: <FaCreditCard className="w-10 h-10" />,
-                title: "Flexible Payment",
-                description: "Easy EMI options with no additional cost"
-              },
-              {
-                icon: <FaTools className="w-10 h-10" />,
-                title: "Expert Installation",
-                description: "Certified technicians for professional setup"
-              },
-              {
-                icon: <FaUserClock className="w-10 h-10" />,
-                title: "24/7 Support",
-                description: "Round-the-clock customer assistance"
-              },
-              {
-                icon: <FaAward className="w-10 h-10" />,
-                title: "Quality Assured",
-                description: "100% satisfaction guaranteed on all services"
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-                className="flex items-start space-x-5 p-8 rounded-xl bg-white hover:bg-gray-50 
-                  transition-all duration-300 transform hover:scale-105 group cursor-pointer 
-                  border border-gray-100 shadow-lg hover:shadow-xl"
-              >
-                <div className="text-blue-600 group-hover:text-blue-700 transition-colors duration-300">
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600 text-lg leading-relaxed">{feature.description}</p>
-                </div>
               </motion.div>
             ))}
           </div>

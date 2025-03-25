@@ -185,14 +185,6 @@ function Services() {
 
       <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
         <motion.a
-          href="tel:+919649203996"
-          className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 hover:scale-110"
-          aria-label="Call us"
-          whileHover={{ scale: 1.1 }}
-        >
-          <Phone className="w-6 h-6" />
-        </motion.a>
-        <motion.a
           href={getWhatsAppLink("AC")}
           className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-colors duration-300 hover:scale-110"
           aria-label="Chat on WhatsApp"
