@@ -24,11 +24,11 @@ function Navbar() {
               <div className="flex flex-col space-y-1">
                 <span className="text-lg sm:text-xl lg:text-2xl font-extrabold bg-gradient-to-r from-white to-white bg-clip-text text-transparent tracking-wider uppercase block hover:scale-105 transition-transform duration-300">
                   {/* Show shorter text on mobile */}
-                  <span className="sm:hidden">Advance Plus</span>
+                  <span className="sm:hidden">Advance Plus Electronics & Services</span>
                   <span className="hidden sm:block">Advance Plus Electronics & Services</span>
                 </span>
                 <span className="text-sm sm:text-base lg:text-lg font-medium text-white tracking-wide block">
-                  <span className="sm:hidden">AC Sales & Service</span>
+                  <span className="sm:hidden">Authorized Sales and Service Dealer</span>
                   <span className="hidden sm:block">Authorized Sales and Service Dealer</span>
                 </span>
               </div>
