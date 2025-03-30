@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaMoneyBillWave, FaTruck, FaCreditCard, FaTools, FaUserClock, FaAward, FaPhone } from 'react-icons/fa';
+import { 
+  FaShieldAlt, 
+  FaClock, 
+  FaTools, 
+  FaUserTie, 
+  FaMoneyBillWave, 
+  FaCheckCircle,
+  FaPhone  // Added FaPhone import
+} from 'react-icons/fa';
 
 function Hero() {
   const words = ["Advance Plus Electronics", "& Services"];
@@ -19,7 +27,7 @@ function Hero() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative min-h-[calc(100vh-4rem)] flex items-center">
+      <div className="relative top-[70px] min-h-[calc(100vh-4rem)] flex items-center">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0"
@@ -141,6 +149,81 @@ function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Why Choose Us Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Why <span className="text-blue-600">Choose Us?</span>
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Experience excellence in AC services with our expert team and customer-first approach
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <FaShieldAlt className="w-8 h-8" />,
+                title: "Quality Assured",
+                description: "We use only genuine parts and follow industry best practices"
+              },
+              {
+                icon: <FaClock className="w-8 h-8" />,
+                title: "24/7 Support",
+                description: "Round-the-clock emergency service and support"
+              },
+              {
+                icon: <FaTools className="w-8 h-8" />,
+                title: "Expert Technicians",
+                description: "Skilled and certified professionals for all AC brands"
+              },
+              {
+                icon: <FaUserTie className="w-8 h-8" />,
+                title: "Professional Service",
+                description: "Courteous staff and timely service delivery"
+              },
+              {
+                icon: <FaMoneyBillWave className="w-8 h-8" />,
+                title: "Competitive Pricing",
+                description: "Best-in-class service at reasonable rates"
+              },
+              {
+                icon: <FaCheckCircle className="w-8 h-8" />,
+                title: "Satisfaction Guaranteed",
+                description: "100% satisfaction with our service quality"
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {feature.title}
+                  </h3>
+                </div>
+                <p className="text-gray-600">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Brand Section */}
       <section className="bg-white py-20">

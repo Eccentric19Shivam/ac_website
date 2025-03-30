@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone } from 'react-icons/fa';
+import { MdOutlinePlace } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
+
+
 
 function Store() {
     const images = [
@@ -37,9 +41,29 @@ function Store() {
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Our <span className="text-blue-600">Store</span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-3">
             Best showroom in Jaipur!
           </p>
+          <div className=' flex justify-center items-start gap-1 w-[330px] mx-auto'>
+          <MdOutlinePlace className=' mt-1'/>
+          <div className='flex flex-col w-[280px] h-full'>
+          <p className="text-[14px] text-slate-600 max-w-2xl mx-auto">
+             Shop No 7, Balaji Market, Near Royal Greens 
+          </p>
+          <p className="text-[14px] text-slate-600 max-w-2xl mx-auto mb-2">
+           Sirsi Road, Jaipur (Raj.)
+           </p>
+          </div>
+          </div>
+          <div className=' flex justify-center items-start gap-1 w-[300px] mx-auto'>
+          <MdOutlineEmail className=' mt-1'/>
+          <p className="text-[14px] text-slate-600 max-w-2xl mx-auto">
+             <a href="mailto:advanceplus.electronicsservices@gmail.com" className="hover:underline">
+                advanceplus.electronicsservices@gmail.com
+             </a>
+          </p>
+
+          </div>
         </motion.div>
 
         <motion.div 

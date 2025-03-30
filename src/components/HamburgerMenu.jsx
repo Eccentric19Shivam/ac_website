@@ -32,10 +32,10 @@ const HamburgerMenu = () => {
   ];
 
   return (
-    <div className="lg:hidden fixed top-5 right-5 z-40"> {/* Adjusted positioning and z-index */}
+    <div className="lg:hidden fixed top-10 sm:top-5 right-5 z-40"> {/* Adjusted positioning and z-index */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-50 p-2.5 rounded-lg bg-black/50 backdrop-blur-sm 
+        className="relative z-50 p-2.5 rounded-lg  bg-black/50 backdrop-blur-sm 
           hover:bg-black/70 transition-all duration-300 border border-white/10"
         aria-label="Toggle menu"
       >

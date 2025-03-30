@@ -12,8 +12,8 @@ function Navbar() {
 
   return (
     <nav className="bg-black fixed w-full top-0 z-40 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto h-[80px]  lg:px-8">
+        <div className="flex justify-between gap-1 items-center h-20">
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-4">
               <img 
