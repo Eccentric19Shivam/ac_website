@@ -19,54 +19,53 @@ const products = [
     id: 3,
     name: 'Portable AC',
     description: 'Flexible cooling solution you can move anywhere',
-    image: 'ac/portable.png'
+    image: '/ac/portable.png'
   },
   {
     id: 4,
     name: 'Tower AC',
     description: 'Sleek design with powerful vertical airflow',
-    image: 'ac/tower.png'
+    image: '/ac/tower.png'
   },
   {
     id: 5,
     name: 'Cassette AC',
     description: 'Perfect for commercial spaces with even cooling',
-    image: 'ac/cassette.png'
+    image: '/ac/cassette.png'
   },
   {
     id: 6,
     name: 'Ductable AC',
     description: 'Ideal for large spaces and office environments',
-    image: 'ac/ductable.png'
+    image: '/ac/ductable.png'
   },
   {
     id: 7,
     name: 'VRF AC System',
     description: 'Advanced climate control for multi-zone applications',
-    image: 'ac/vrf.png'
+    image: '/ac/vrf.png'
   },
   {
     id: 8,
     name: 'Hot & Cold AC',
     description: 'Year-round comfort with heating and cooling',
-    image: 'ac/hot_cold.png'
+    image: '/ac/hot_cold.png'
   }
 ];
 
 function Products() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-blue-50 py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
             Our <span className="text-blue-600">Products</span>
-          </h2>
+          </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Discover our range of energy-efficient air conditioning solutions
           </p>
@@ -74,8 +73,7 @@ function Products() {
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center mb-16"
         >
@@ -121,7 +119,7 @@ function Products() {
                   {product.description}
                 </p>
                 <a 
-                  href="https://wa.me/+919649203996?text=I'm%20interested%20in%20your%20AC%20products"
+                  href={`https://wa.me/+919649203996?text=I'm interested in your ${product.name}. Can you provide more information?`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-4 text-white opacity-0 transform 
@@ -136,7 +134,7 @@ function Products() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
