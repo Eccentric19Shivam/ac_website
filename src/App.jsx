@@ -1,5 +1,12 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { 
+  createBrowserRouter, 
+  RouterProvider, 
+  createRoutesFromElements,
+  Route,
+  Outlet,
+  Navigate 
+} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Products from './components/Products';
@@ -17,31 +24,45 @@ const LoadingSpinner = () => (
   </div>
 );
 
+// Layout component to wrap all routes
+const Layout = () => (
+  <div className="min-h-screen bg-gray-50 flex flex-col relative">
+    <Navbar />
+    <HamburgerMenu />
+    <Suspense fallback={<LoadingSpinner />}>
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+    </Suspense>
+    <div className="fixed bottom-4 right-4 space-y-4 z-50">
+      <CallButton className="lg:hidden" />
+      <WhatsAppButton className="lg:hidden" />
+    </div>
+    <Footer />
+  </div>
+);
+
+// Router configuration
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Layout />}>
+      <Route index element={<Hero />} />
+      <Route path="services" element={<Services />} />
+      <Route path="products" element={<Products />} />
+      <Route path="store" element={<Store />} />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Route>
+  ),
+  {
+    future: {
+      v7_startTransition: true,
+      v7_relativeSplatPath: true
+    }
+  }
+);
+
 function App() {
-  return (
-    <Router>
-      <div className="min-h-screen bg-gray-50 flex flex-col relative">
-        <Navbar />
-        <HamburgerMenu />
-        <Suspense fallback={<LoadingSpinner />}>
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Hero />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/store" element={<Store />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </main>
-        </Suspense>
-        <div className="fixed bottom-4 right-4 space-y-4 z-50">
-          <CallButton className="lg:hidden" />
-          <WhatsAppButton className="lg:hidden" />
-        </div>
-        <Footer />
-      </div>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
